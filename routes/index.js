@@ -31,8 +31,8 @@ indexRoute.post('/new', (req, res) => {
 
     arr.push({
         id: newId++,
-        text: msg,
-        user: name,
+        text: req.body.message,
+        user: req.body.name,
         added: new Date()
     });
 
