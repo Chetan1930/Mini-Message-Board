@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+
+    <style>
+        #navbar {
+            display: flex;
+            column-gap: 40%;
+            row-gap: 20%;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .card {
+            width: 40%;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .card-header {
+            background-color: #ffffff;
+            color: #333;
+            text-align: left;
+            padding: 15px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .card-body {
+            padding: 20px;
+            padding-bottom: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .card-footer {
+            text-align: center;
+            padding: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <span><a href="/">Home</a></span>
+        <span><a href="/new">New Message</a></span>
+    </nav>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Enter your Message</h2>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="/new">
+                <label for="name">Author's Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="msg">Message:</label>
+                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+
+
+                <div class="card-footer">
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
